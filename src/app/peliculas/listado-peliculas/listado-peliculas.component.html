@@ -1,0 +1,10 @@
+<app-listado-generico>
+  <ng-container contenido>
+    <div
+      *ngFor="let pelicula of peliculas; let index = index"
+      class="pelicula-contenedor"
+    >
+      Pelicula {{ index }} : {{ pelicula.titulo }}
+    </div>
+  </ng-container>
+</app-listado-generico>
