@@ -9,6 +9,6 @@
   <p>No hay peliculas</p>
 </div>
 
-<div class="container" *ngIf="listado && listado.length > 0">
+<div *ngIf="listado && listado.length > 0">
   <ng-content select="[contenido]"></ng-content>
 </div>
