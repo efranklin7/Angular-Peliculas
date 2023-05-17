@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { generoCreacionDTO } from '../genero';
 
 @Component({
   selector: 'app-crear-genero',
@@ -7,12 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./crear-genero.component.css'],
 })
 export class CrearGeneroComponent implements OnInit {
-  constructor(private router: Router) {}
-
+  constructor(private router: Router, private rou: ActivatedRoute) {}
   ngOnInit(): void {}
-  guardarCambios() {
-    //alert(5);
 
-    this.router.navigate(['/generos']);
+  guardarCambios(g: generoCreacionDTO) {
+    console.log(g);
   }
 }

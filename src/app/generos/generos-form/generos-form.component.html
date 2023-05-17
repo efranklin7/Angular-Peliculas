@@ -1,0 +1,14 @@
+<form (submit)="guardarCambios()" [formGroup]="form">
+  <label for="formControlInput" class="form=-label">Name</label>
+  <span class="d-block text-danger" *ngIf="form.touched && form.invalid">{{
+    getErrorControl()
+  }}</span>
+  <!-- <p>{{ name?.getError("stringMust").message }}</p> -->
+  <input type="text" formControlName="name" class="form-control mb-2" />
+  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+    Guardar
+  </button>
+  <a class="btn btn-secondary" routerLink="/generos">Cancelar</a>
+</form>
+
+<!-- <button (click)="forms.click()">subs</button> -->
