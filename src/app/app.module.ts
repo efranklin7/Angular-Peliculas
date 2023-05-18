@@ -25,6 +25,7 @@ import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-peli
 import { ReactiveFormsModule } from '@angular/forms';
 //import { FormComponent } from './generos/form/form.component';
 import { GenerosFormComponent } from './generos/generos-form/generos-form.component';
+import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-peliculas.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { GenerosFormComponent } from './generos/generos-form/generos-form.compon
     EditarPeliculaComponent,
     //FormComponent,
     GenerosFormComponent,
+    FiltroPeliculasComponent,
   ],
   imports: [
     BrowserModule,
