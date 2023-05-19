@@ -1,33 +1,31 @@
 <h2>Buscar Peliculas</h2>
-<form [formGroup]="form" (ngSubmit)="submited()" class="row align-items-end">
-  <div class="col">
+<form [formGroup]="form" class="d-md-flex align-items-end">
+  <div class="col me-2">
     <label class="form-label">Titulo</label>
     <input class="form-control" type="text" formControlName="titulo" />
   </div>
-  <div class="col">
+  <div class="col me-2">
     <label for="">Genero</label>
     <select class="form-select" formControlName="generoId">
-      <option selected value="0">Selecccionar genero</option>
+      <option class="mt-5" selected value="0">Selecccionar</option>
       <option *ngFor="let genero of generos" [value]="genero.id">
         {{ genero.nombre }}
       </option>
     </select>
   </div>
-  <div class="col form-check">
+  <div class="col form-check me-2">
     <label class="form-check-label">Proximos Estrenos</label>
     <input
       type="checkbox"
-      class="form-check-input"
+      class="form-check-input me-2"
       formControlName="proximosEstrenos"
     />
   </div>
-  <div class="col form-check">
+  <div class="col form-check me-2">
     <label class="form-check-label">En Cines</label>
     <input type="checkbox" class="form-check-input" formControlName="enCines" />
   </div>
-  <div class="col">
-    <button class="btn btn-primary" type="submit">sub</button>
-  </div>
+
   <div class="col">
     <button class="btn btn-warning" (click)="limpiar()" type="button">
       Limpiar

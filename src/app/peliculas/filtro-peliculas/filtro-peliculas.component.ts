@@ -134,9 +134,7 @@ export class FiltroPeliculasComponent implements OnInit {
       );
     }
   }
-  submited() {
-    console.log(this.form.value);
-  }
+
   limpiar() {
     this.form.patchValue(this.formOriginal);
     this.location.replaceState(`/peliculas/buscar`);
