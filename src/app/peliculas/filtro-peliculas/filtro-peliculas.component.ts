@@ -101,8 +101,8 @@ export class FiltroPeliculasComponent implements OnInit {
       query.push(`enCines=${value.enCines}`);
     }
     const queryString = query.join('&');
-    let x = this.location.replaceState('/peliculas/buscar', queryString);
-    console.log(x);
+    this.location.replaceState('/peliculas/buscar', queryString);
+    //-----------------dos maneras mas de hacerlo ---------------
     //this.location.replaceState(`/peliculas/buscar?${queryString}`);
     //this.router.navigateByUrl(`/peliculas/buscar?${queryString}`);
   }
