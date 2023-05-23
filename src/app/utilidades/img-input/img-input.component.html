@@ -1,0 +1,12 @@
+<div>
+  <button class="btn btn-warning" (click)="file.click()">
+    Seleccionar Imagen
+  </button>
+  <input (change)="fileUpload($event)" accept=".png" type="file" #file hidden />
+</div>
+<div class="mt-3 col-4" *ngIf="fileImg">
+  <img class="img-fluid" [src]="fileImg" alt="photo" />
+</div>
+<div class="mt-3 col-4" *ngIf="urlImagenActual">
+  <img class="img-fluid" [src]="urlImagenActual" alt="photo" />
+</div>

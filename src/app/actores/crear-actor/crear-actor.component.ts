@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { actorDTO } from '../Actor';
 
 @Component({
   selector: 'app-crear-actor',
   templateUrl: './crear-actor.component.html',
-  styleUrls: ['./crear-actor.component.css']
+  styleUrls: ['./crear-actor.component.css'],
 })
 export class CrearActorComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  crearActor(actor: actorDTO) {
+    console.log(actor);
   }
-
 }

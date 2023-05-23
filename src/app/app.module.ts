@@ -26,6 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 //import { FormComponent } from './generos/form/form.component';
 import { GenerosFormComponent } from './generos/generos-form/generos-form.component';
 import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-peliculas.component';
+import { FormActoresComponent } from './actores/form-actores/form-actores.component';
+import { ImgInputComponent } from './utilidades/img-input/img-input.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-pe
     //FormComponent,
     GenerosFormComponent,
     FiltroPeliculasComponent,
+    FormActoresComponent,
+    ImgInputComponent,
   ],
   imports: [
     BrowserModule,
