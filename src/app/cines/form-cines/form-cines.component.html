@@ -1,0 +1,10 @@
+<form (submit)="onSubmit()" [formGroup]="form">
+  <div>
+    <label>Nombre</label>
+    <input class="form-control" formControlName="name" type="text" />
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button class="btn btn-warning" routerLink="/cines">Cancelar</button>
+  </div>
+</form>
