@@ -1,0 +1,27 @@
+<div class="col-4">
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Editar</a>
+      <ng-template class="form-floating" ngbNavContent>
+        <div class="form-floating">
+          <textarea
+            (input)="inputTextArea($event)"
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextareas"
+            >{{ textAreaValue }}</textarea
+          >
+          <label for="floatingTextareas">Biografia</label>
+        </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>Preview</a>
+      <ng-template ngbNavContent>
+        <markdown [data]="textAreaValue" ngPreserveWhitespaces></markdown>
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

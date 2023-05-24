@@ -28,6 +28,8 @@ import { GenerosFormComponent } from './generos/generos-form/generos-form.compon
 import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-peliculas.component';
 import { FormActoresComponent } from './actores/form-actores/form-actores.component';
 import { ImgInputComponent } from './utilidades/img-input/img-input.component';
+import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { ImgInputComponent } from './utilidades/img-input/img-input.component';
     FiltroPeliculasComponent,
     FormActoresComponent,
     ImgInputComponent,
+    InputMarkdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { ImgInputComponent } from './utilidades/img-input/img-input.component';
     MaterialModule,
     NgbModule,
     ReactiveFormsModule,
+    MarkdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

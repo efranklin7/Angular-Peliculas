@@ -12,7 +12,7 @@ export class ImgInputComponent implements OnInit {
   ngOnInit(): void {}
   fileImg: any;
   @Input()
-  urlImagenActual: string = '';
+  urlImagenActual: string | undefined = '';
   @Output()
   file: EventEmitter<File> = new EventEmitter<File>();
   //async

@@ -10,7 +10,7 @@ import { actorDTO, actorEditDTO } from '../Actor';
 export class FormActoresComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
   @Input()
-  actorModel!: actorEditDTO;
+  actorModel: actorEditDTO | undefined;
   @Output()
   out: EventEmitter<actorDTO> = new EventEmitter<actorDTO>();
   form!: FormGroup;
@@ -19,6 +19,7 @@ export class FormActoresComponent implements OnInit {
       nombre: ['', Validators.required],
       fechaNacimiento: [''],
       foto: '',
+      biografia: '',
     });
 
     //{year: 2023, month: 5, day: 26}
@@ -27,10 +28,12 @@ export class FormActoresComponent implements OnInit {
     }
   }
   getFile(file: File) {
-    if (file) {
-      const foto = this.form.get('foto');
-      foto?.setValue(file);
-    }
+    this.form.get('foto')?.setValue(file);
+  }
+  getTextArea(text: string) {
+    //console.log(text);
+
+    this.form.get('biografia')?.setValue(text);
   }
   get nombre() {
     const nombre = this.form.get('nombre');
