@@ -30,6 +30,8 @@ import { FormActoresComponent } from './actores/form-actores/form-actores.compon
 import { ImgInputComponent } from './utilidades/img-input/img-input.component';
 import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { FormCinesComponent } from './cines/form-cines/form-cines.component';
+import { EditarCineComponent } from './cines/editar-cine/editar-cine.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { MarkdownModule } from 'ngx-markdown';
     FormActoresComponent,
     ImgInputComponent,
     InputMarkdownComponent,
+    FormCinesComponent,
+    EditarCineComponent,
   ],
   imports: [
     BrowserModule,

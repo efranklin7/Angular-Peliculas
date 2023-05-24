@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { CrearCineDTO } from '../Cine';
 
 @Component({
   selector: 'app-crear-cine',
   templateUrl: './crear-cine.component.html',
-  styleUrls: ['./crear-cine.component.css']
+  styleUrls: ['./crear-cine.component.css'],
 })
 export class CrearCineComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  onSubmit(event: CrearCineDTO) {
+    console.log(event);
   }
-
 }
