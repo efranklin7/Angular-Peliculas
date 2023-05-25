@@ -32,6 +32,7 @@ import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdo
 import { MarkdownModule } from 'ngx-markdown';
 import { FormCinesComponent } from './cines/form-cines/form-cines.component';
 import { EditarCineComponent } from './cines/editar-cine/editar-cine.component';
+import { MapaComponent } from './utilidades/mapa/mapa.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { EditarCineComponent } from './cines/editar-cine/editar-cine.component';
     InputMarkdownComponent,
     FormCinesComponent,
     EditarCineComponent,
+    MapaComponent,
   ],
   imports: [
     BrowserModule,
