@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CrearCineDTO } from '../Cine';
+import { CineDTO, CrearCineDTO } from '../Cine';
+import { Coordenadas } from 'src/app/utilidades/mapa/Coordenadas';
 
 @Component({
   selector: 'app-form-cines',
@@ -9,7 +10,7 @@ import { CrearCineDTO } from '../Cine';
 })
 export class FormCinesComponent implements OnInit {
   @Input()
-  modelo!: CrearCineDTO;
+  modelo!: CineDTO;
 
   @Output()
   out: EventEmitter<CrearCineDTO> = new EventEmitter<CrearCineDTO>();
@@ -18,14 +19,24 @@ export class FormCinesComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
+      lat: ['', Validators.required],
+      lng: ['', Validators.required],
     });
     if (this.modelo != undefined) {
       this.form.patchValue(this.modelo);
     }
   }
+  getCoordenadas(coordenada: Coordenadas) {
+    this.form.patchValue(coordenada);
+    console.log(coordenada);
+    this.check();
+  }
 
   onSubmit() {
     //console.log(this.form.value);
     this.out.emit(this.form.value);
+  }
+  check() {
+    console.log(this.form.value);
   }
 }

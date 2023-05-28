@@ -1,10 +1,27 @@
-<form (submit)="onSubmit()" [formGroup]="form">
-  <div>
+<form class="row" (submit)="onSubmit()" [formGroup]="form">
+  <div class="col-6">
     <label>Nombre</label>
     <input class="form-control" formControlName="name" type="text" />
+    <span class="text-danger" *ngIf="form.touched && form.invalid"
+      >Nombre es requerido</span
+    >
   </div>
-  <div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+  <div class="my-3">
+    <h2>Coloque el cine en el mapa</h2>
+    <app-mapa
+      [coordenada]="modelo"
+      (coordenadas)="getCoordenadas($event)"
+    ></app-mapa>
+  </div>
+  <div class="d-flex col-6">
+    <button
+      type="submit"
+      class="btn btn-primary me-2"
+      [disabled]="form.invalid"
+    >
+      Submit
+    </button>
     <button class="btn btn-warning" routerLink="/cines">Cancelar</button>
   </div>
 </form>

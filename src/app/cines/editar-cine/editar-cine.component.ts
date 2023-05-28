@@ -8,7 +8,11 @@ import { CineDTO } from '../Cine';
 })
 export class EditarCineComponent implements OnInit {
   constructor() {}
-  modelo: CineDTO = { name: 'Cinepolis' };
+  modelo: CineDTO = {
+    name: 'Cinepolis',
+    lat: 32.62213527409616,
+    lng: -475.40753173867427,
+  };
   ngOnInit(): void {}
   onSubmit(event: CineDTO) {
     console.log(event);
