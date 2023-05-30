@@ -21,7 +21,7 @@ li {
 .div-button-selector {
   display: flex;
   flex-direction: column;
-  margin: auto 1px;
+  margin: auto 10px;
 }
 .selector-button {
   border: 1px solid black;
