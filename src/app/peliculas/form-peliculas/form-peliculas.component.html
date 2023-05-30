@@ -1,0 +1,76 @@
+<form [formGroup]="form">
+  <div>
+    <label>Titulo</label>
+    <input class="form-control" formControlName="titulo" type="text" />
+  </div>
+
+  <div>
+    <label>En Cines</label>
+    <input class="form-check-input" formControlName="enCines" type="checkbox" />
+  </div>
+  <div>
+    <label>Trailer</label>
+    <input class="form-control" formControlName="trailer" type="text" />
+  </div>
+
+  <div class="mb-3 d-inline-flex col-4">
+    <input
+      class="form-control"
+      placeholder="yyyy-mm-dd"
+      name="dp"
+      formControlName="fechaLanzamiento"
+      ngbDatepicker
+      #d="ngbDatepicker"
+    />
+    <button
+      class="mb-3btn btn-outline-secondary bi bi-calendar3"
+      (click)="d.toggle()"
+      type="button"
+    ></button>
+  </div>
+  <div>
+    <h4>Poster</h4>
+    <app-img-input
+      [urlImagenActual]="modelo?.poster"
+      (file)="getPoster($event)"
+    ></app-img-input>
+  </div>
+  <app-input-markdown
+    (textArea)="getResumen($event)"
+    [textAreaValue]="modelo.resumen"
+    [myPlaceHolder]="resumenPlaceHolder"
+  ></app-input-markdown>
+  <div class="selector-div">
+    <div class="ul-selector">
+      <ul *ngFor="let categoria of listCategoria; let index = index">
+        <li (click)="categoriaSeleccionada(index)">{{ categoria }}</li>
+      </ul>
+    </div>
+    <div class="div-button-selector">
+      <button
+        (click)="removeAllCategorias()"
+        class="selector-button btn btn-warning"
+      >
+        < <
+      </button>
+      <button
+        (click)="AddAllCategorias()"
+        class="selector-button btn btn-warning"
+      >
+        > >
+      </button>
+    </div>
+    <div class="ul-selector">
+      <ul
+        *ngFor="let categoria of listCategoriaSeleccionada; let index = index"
+      >
+        <li (click)="categoriaDeseleccionada(index)">{{ categoria }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <button (submit)="onSubmit()" class="btn btn-primary">Guardar</button>
+    <button class="btn btn-secondary">Cancelar</button>
+  </div>
+</form>
