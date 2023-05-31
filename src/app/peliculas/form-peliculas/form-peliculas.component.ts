@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Categorias } from '../Categoria';
+import { Cines } from '../Cines';
 
 @Component({
   selector: 'app-form-peliculas',
@@ -12,8 +14,22 @@ export class FormPeliculasComponent implements OnInit {
   @Output()
   resumenMark: EventEmitter<string> = new EventEmitter<string>();
   form!: FormGroup;
-  listCategoria: string[] = ['terror', 'accion', 'drama', 'comedia'];
-  listCategoriaSeleccionada: string[] = [];
+  categoriaList: Categorias[] = [
+    { key: 1, value: 'Accion' },
+    { key: 2, value: 'Terror' },
+    { key: 3, value: 'Romance' },
+    { key: 4, value: 'Drama' },
+  ];
+  categoriaSeleccionada: Categorias[] = [];
+  cineList: Cines[] = [
+    {
+      key: 1,
+      value: 'Cinepolis',
+    },
+    { key: 2, value: 'CineMax' },
+    { key: 3, value: 'Cinemex' },
+  ];
+  cineSeleccionado: Cines[] = [];
   @Input()
   modelo: any;
   ngOnInit(): void {
@@ -24,6 +40,8 @@ export class FormPeliculasComponent implements OnInit {
       trailer: '',
       fechaLanzamiento: '',
       poster: '',
+      generoId: '',
+      cineId: '',
     });
     if (this.modelo) {
       this.form.patchValue(this.modelo);
@@ -36,43 +54,11 @@ export class FormPeliculasComponent implements OnInit {
     this.form.patchValue({ poster: value });
   }
   onSubmit() {
+    //console.log(this.categoriaSeleccionada);
+    let keysGeneros = this.categoriaSeleccionada.map((value) => value.key);
+    this.form.get('generoId')?.patchValue(keysGeneros);
+    let keysCines = this.cineSeleccionado.map((value) => value.key);
+    this.form.get('cineId')?.patchValue(keysCines);
     console.log(this.form.value);
-  }
-  categoriaSeleccionada(index: number) {
-    console.log(index);
-    const value = this.listCategoriaSeleccionada.find((value) => {
-      return this.listCategoria[index] == value;
-    });
-
-    if (!value) {
-      this.listCategoriaSeleccionada.push(this.listCategoria[index]);
-    }
-  }
-  categoriaDeseleccionada(index: number) {
-    console.log(index);
-    this.listCategoriaSeleccionada.splice(index, 1);
-  }
-  removeAllCategorias() {
-    this.listCategoriaSeleccionada.splice(0);
-  }
-  AddAllCategorias() {
-    //agregar todos
-    if (this.listCategoriaSeleccionada.length == 0) {
-      this.listCategoria.forEach((value) => {
-        this.listCategoriaSeleccionada.push(value);
-      });
-    }
-    //agregar los que falten
-    else {
-      for (let i = 0; i <= this.listCategoria.length; i++) {
-        let category = this.listCategoria[i];
-        if (this.listCategoriaSeleccionada.includes(category)) {
-          continue;
-        } else {
-          this.listCategoriaSeleccionada.push(category);
-        }
-      }
-      console.log(this.listCategoriaSeleccionada);
-    }
   }
 }

@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-crear-pelicula',
   templateUrl: './crear-pelicula.component.html',
-  styleUrls: ['./crear-pelicula.component.css']
+  styleUrls: ['./crear-pelicula.component.css'],
 })
 export class CrearPeliculaComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  onSubmit(pelicula: any) {
+    console.log(pelicula);
   }
-
 }

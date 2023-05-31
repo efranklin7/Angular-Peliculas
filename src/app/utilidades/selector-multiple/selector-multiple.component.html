@@ -1,0 +1,30 @@
+<div class="selector-div">
+  <div class="ul-selector">
+    <ul *ngFor="let categoria of desEleccionados; let index = index">
+      <li (click)="categoriaSeleccionada(categoria, index)">
+        {{ categoria.value }}
+      </li>
+    </ul>
+  </div>
+  <div class="div-button-selector">
+    <button
+      (click)="removeAllCategorias()"
+      class="selector-button btn btn-warning mb-2"
+    >
+      < <
+    </button>
+    <button
+      (click)="AddAllCategorias()"
+      class="selector-button btn btn-warning"
+    >
+      > >
+    </button>
+  </div>
+  <div class="ul-selector">
+    <ul *ngFor="let categoria of seleccionados; let index = index">
+      <li (click)="categoriaDeseleccionada(categoria, index)">
+        {{ categoria.value }}
+      </li>
+    </ul>
+  </div>
+</div>

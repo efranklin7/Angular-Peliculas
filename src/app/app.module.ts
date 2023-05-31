@@ -34,6 +34,7 @@ import { FormCinesComponent } from './cines/form-cines/form-cines.component';
 import { EditarCineComponent } from './cines/editar-cine/editar-cine.component';
 import { MapaComponent } from './utilidades/mapa/mapa.component';
 import { FormPeliculasComponent } from './peliculas/form-peliculas/form-peliculas.component';
+import { SelectorMultipleComponent } from './utilidades/selector-multiple/selector-multiple.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { FormPeliculasComponent } from './peliculas/form-peliculas/form-pelicula
     EditarCineComponent,
     MapaComponent,
     FormPeliculasComponent,
+    SelectorMultipleComponent,
   ],
   imports: [
     BrowserModule,

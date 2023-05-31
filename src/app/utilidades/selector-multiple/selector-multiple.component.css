@@ -1,0 +1,28 @@
+.selector-div {
+  display: flex;
+  flex-direction: row;
+}
+.ul-selector {
+  height: 300px;
+  width: 220px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+ul {
+  background-color: aqua;
+  list-style: none;
+  width: 100%;
+}
+li {
+  color: rgb(235, 9, 129);
+}
+
+.div-button-selector {
+  display: flex;
+  flex-direction: column;
+  margin: auto 10px;
+}
+.selector-button {
+  border: 1px solid black;
+}
