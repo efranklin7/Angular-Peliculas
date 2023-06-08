@@ -22,7 +22,7 @@ import { CrearCineComponent } from './cines/crear-cine/crear-cine.component';
 import { EditarGeneroComponent } from './generos/editar-genero/editar-genero.component';
 import { EditarActorComponent } from './actores/editar-actor/editar-actor.component';
 import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-pelicula.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { FormComponent } from './generos/form/form.component';
 import { GenerosFormComponent } from './generos/generos-form/generos-form.component';
 import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-peliculas.component';
@@ -35,6 +35,7 @@ import { EditarCineComponent } from './cines/editar-cine/editar-cine.component';
 import { MapaComponent } from './utilidades/mapa/mapa.component';
 import { FormPeliculasComponent } from './peliculas/form-peliculas/form-peliculas.component';
 import { SelectorMultipleComponent } from './utilidades/selector-multiple/selector-multiple.component';
+import { AutoCompleteComponent } from './utilidades/auto-complete/auto-complete.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { SelectorMultipleComponent } from './utilidades/selector-multiple/select
     MapaComponent,
     FormPeliculasComponent,
     SelectorMultipleComponent,
+    AutoCompleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +76,7 @@ import { SelectorMultipleComponent } from './utilidades/selector-multiple/select
     MaterialModule,
     NgbModule,
     ReactiveFormsModule,
+    FormsModule,
     MarkdownModule.forRoot(),
   ],
   providers: [],
